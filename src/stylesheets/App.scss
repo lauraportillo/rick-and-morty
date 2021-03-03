@@ -11,6 +11,16 @@
   align-items: center;
   background-color: rgba(128, 179, 51, 0.4);
 }
+.containerFilter {
+  background-color: rgba(128, 179, 51, 0.4);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__name {
+    font-size: 20px;
+  }
+}
 
 .containerRender {
   display: flex;

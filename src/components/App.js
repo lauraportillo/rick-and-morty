@@ -17,6 +17,18 @@ const App = () => {
     getDataFromApi().then((data) => setCharacters(data));
   }, []);
 
+  //definición de la función que maneja los cambios en los inputs e indentifica en qué input se está realizando el cambio.
+  const handleFilter = (inputChange) => {
+    if (inputChange.key === 'name') {
+      setName(inputChange.value);
+    }
+  };
+
+  //filtrar
+  const filterCharacters = characters.filter((character) => {
+    return character.name.toLowerCase().includes(name.toLowerCase());
+  });
+
   //pintar
   return (
     <div className="container">
@@ -27,9 +39,9 @@ const App = () => {
         />
       </header>
       <main>
-        <section className="containerFilter"></section>
+        <Filters handleFilter={handleFilter} />
         <section className="containerRender">
-          <CharacterList characters={characters} />
+          <CharacterList characters={filterCharacters} />
         </section>
       </main>
     </div>
