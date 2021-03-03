@@ -1,6 +1,30 @@
+* {
+  margin: 0;
+}
+
+.container {
+}
+
 .containerHeader {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(128, 179, 51, 0.4);
+}
+
+.containerRender {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: rgb(189, 187, 187);
+}
+
+.containerList {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 100px;
 }

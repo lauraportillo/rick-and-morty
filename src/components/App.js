@@ -19,7 +19,7 @@ const App = () => {
 
   //pintar
   return (
-    <div>
+    <div className="container">
       <header className="containerHeader">
         <img
           src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png"
@@ -27,7 +27,10 @@ const App = () => {
         />
       </header>
       <main>
-        <CharacterList characters={characters} />
+        <section className="containerFilter"></section>
+        <section className="containerRender">
+          <CharacterList characters={characters} />
+        </section>
       </main>
     </div>
   );
