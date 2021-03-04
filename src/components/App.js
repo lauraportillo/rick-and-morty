@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import CharacterNotFound from './CharacterNotFound';
 import getDataFromApi from '../services/getDataFromApi';
 import '../stylesheets/App.scss';
 
@@ -29,6 +30,18 @@ const App = () => {
     return character.name.toLowerCase().includes(name.toLowerCase());
   });
 
+  // cada usuario tiene que tener su enlace
+  const renderCharacterDetail = (props) => {
+    const id = parseInt(props.match.params.id);
+    const characterFound = characters.find((character) => character.id === id);
+
+    if (characterFound) {
+      return <CharacterDetail character={characterFound} />;
+    } else {
+      return <CharacterNotFound />;
+    }
+  };
+
   //pintar
   return (
     <div className="container">
@@ -40,9 +53,10 @@ const App = () => {
       </header>
       <main>
         <Filters handleFilter={handleFilter} />
-        <section className="containerRender">
-          <CharacterList characters={filterCharacters} />
-        </section>
+        <CharacterList characters={filterCharacters} />
+        <Switch>
+          <Route path="/character/:id" render={renderCharacterDetail} />
+        </Switch>
       </main>
     </div>
   );

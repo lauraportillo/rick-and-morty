@@ -28,13 +28,17 @@
   align-items: center;
   padding: 50px;
   background-color: rgb(189, 187, 187);
-}
-
-.containerList {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 50px;
-  grid-row-gap: 100px;
+  &__list {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 100px;
+    &--card {
+      background-color: rgba(35, 169, 246, 0.4);
+      padding-bottom: 30px;
+      list-style: none;
+    }
+  }
 }
