@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
@@ -45,16 +46,14 @@ const App = () => {
   //pintar
   return (
     <div className="container">
-      <header className="containerHeader">
-        <img
-          src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png"
-          alt="Rick and Morty Logo"
-        />
-      </header>
+      <Header />
       <main>
-        <Filters handleFilter={handleFilter} />
-        <CharacterList characters={filterCharacters} />
         <Switch>
+          <Route path="/" exact>
+            <Filters handleFilter={handleFilter} />
+            <CharacterList characters={filterCharacters} />
+          </Route>
+
           <Route path="/character/:id" render={renderCharacterDetail} />
         </Switch>
       </main>

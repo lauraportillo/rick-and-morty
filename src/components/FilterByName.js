@@ -15,6 +15,7 @@ const FilterByName = (props) => {
         name="name"
         id="name"
         placeholder="Character name"
+        //value=
         onChange={handleChange}
       />
     </>

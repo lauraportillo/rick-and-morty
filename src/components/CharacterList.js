@@ -4,6 +4,7 @@ import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
   const renderCharacters = () => {
+    //hay que meterle un if si pinta un listado igual a cero
     return props.characters.map((character) => {
       return (
         <li key={character.id} className="containerRender__list--card">
