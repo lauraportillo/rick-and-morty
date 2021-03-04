@@ -10,6 +10,10 @@ const CharacterList = (props) => {
           <h2>Character not found</h2>
         </section>
       );
+      // } else if (props.character.specie === 'human') {
+      //   return 'Human';
+      // } else if (props.character.specie === 'alien') {
+      //   return 'Alien';
     } else {
       return props.characters.map((character) => {
         return (
