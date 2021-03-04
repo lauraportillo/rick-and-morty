@@ -4,16 +4,23 @@ import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
   const renderCharacters = () => {
-    //hay que meterle un if si pinta un listado igual a cero
-    return props.characters.map((character) => {
+    if (props.characters.length === 0) {
       return (
-        <li key={character.id} className="containerRender__list--card">
-          <Link to={`./character/${character.id}`}>
-            <CharacterCard character={character} />
-          </Link>
-        </li>
+        <section>
+          <h2>Character not found</h2>
+        </section>
       );
-    });
+    } else {
+      return props.characters.map((character) => {
+        return (
+          <li key={character.id} className="containerRender__list--card">
+            <Link to={`./character/${character.id}`}>
+              <CharacterCard character={character} />
+            </Link>
+          </li>
+        );
+      });
+    }
   };
 
   return (
