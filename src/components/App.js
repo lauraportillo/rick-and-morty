@@ -50,7 +50,7 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} />
+            <Filters handleFilter={handleFilter} name={name} />
             <CharacterList characters={filterCharacters} />
           </Route>
 

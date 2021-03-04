@@ -15,7 +15,8 @@ const FilterByName = (props) => {
         name="name"
         id="name"
         placeholder="Character name"
-        // value={props.filterCharacters}
+        //estado sincronizado con el input: pinto el estado en el input abuela-madre-nieta
+        value={props.name}
         onChange={handleChange}
       />
     </>
