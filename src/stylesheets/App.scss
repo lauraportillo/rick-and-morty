@@ -1,5 +1,10 @@
 * {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
 }
 
 .container {
@@ -38,7 +43,6 @@
     &--card {
       background-color: rgba(35, 169, 246, 0.4);
       padding-bottom: 30px;
-      list-style: none;
     }
   }
 }
