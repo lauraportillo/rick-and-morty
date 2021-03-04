@@ -1,4 +1,5 @@
 import FilterByName from './FilterByName';
+import FilterBySpecie from './FilterBySpecie';
 
 const Filters = (props) => {
   const handleForm = (ev) => {
@@ -7,6 +8,7 @@ const Filters = (props) => {
   return (
     <form onSubmit={handleForm} className="containerFilter">
       <FilterByName handleFilter={props.handleFilter} name={props.name} />
+      <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
     </form>
   );
 };

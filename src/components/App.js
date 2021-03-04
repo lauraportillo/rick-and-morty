@@ -12,6 +12,7 @@ const App = () => {
   //estados
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
+  const [specie, setSpecie] = useState('all');
 
   //vida del componente y promesa
   useEffect(() => {
@@ -23,13 +24,23 @@ const App = () => {
   const handleFilter = (inputChange) => {
     if (inputChange.key === 'name') {
       setName(inputChange.value);
+    } else if (inputChange.key === 'specie') {
+      setSpecie(inputChange.value);
     }
   };
 
   //filtrar
-  const filterCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(name.toLowerCase());
-  });
+  const filterCharacters = characters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(name.toLowerCase());
+    })
+    .filter((character) => {
+      if (specie === 'all') {
+        return true;
+      } else {
+        return character.specie === specie;
+      }
+    });
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
