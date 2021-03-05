@@ -41,7 +41,9 @@ const App = () => {
       } else {
         return character.specie === specie;
       }
-    });
+    })
+    // ordenado alfabéticamente de la z a la a
+    .sort((a, z) => z.name.localeCompare(a.name));
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
