@@ -1,19 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CharacterCard from './CharacterCard';
+import CharacterNotFound from './CharacterNotFound';
 
 const CharacterList = (props) => {
   const renderCharacters = () => {
     if (props.characters.length === 0) {
-      return (
-        <section>
-          <h2>Character not found</h2>
-        </section>
-      );
-      // } else if (props.character.specie === 'human') {
-      //   return 'Human';
-      // } else if (props.character.specie === 'alien') {
-      //   return 'Alien';
+      return <CharacterNotFound />;
     } else {
       return props.characters.map((character) => {
         return (

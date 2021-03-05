@@ -26,6 +26,7 @@ const App = () => {
       setName(inputChange.value);
     } else if (inputChange.key === 'specie') {
       setSpecie(inputChange.value);
+      console.log(specie);
     }
   };
 
