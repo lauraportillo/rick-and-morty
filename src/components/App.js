@@ -13,6 +13,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('all');
+  const [gender, setGender] = useState([]);
 
   //vida del componente y promesa
   useEffect(() => {
@@ -42,8 +43,8 @@ const App = () => {
         return character.specie === specie;
       }
     })
-    // ordenado alfabéticamente de la z a la a
-    .sort((a, z) => z.name.localeCompare(a.name));
+    // ordenado alfabéticamente de la a a la z
+    .sort((a, z) => a.name.localeCompare(z.name));
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {

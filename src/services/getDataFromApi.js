@@ -7,6 +7,7 @@ const getDataFromApi = () => {
           id: character.id,
           image: character.image,
           name: character.name,
+          gender: character.gender,
           specie: character.species,
           origin: character.origin.name,
           status: character.status,
