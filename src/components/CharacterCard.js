@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/CharacterCard.scss';
 
 const CharacterCard = (props) => {
   return (

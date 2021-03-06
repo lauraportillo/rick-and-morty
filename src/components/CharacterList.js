@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CharacterCard from './CharacterCard';
 import CharacterNotFound from './CharacterNotFound';
+import '../stylesheets/CharacterList.scss';
 
 const CharacterList = (props) => {
   const renderCharacters = () => {

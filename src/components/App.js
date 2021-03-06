@@ -60,7 +60,7 @@ const App = () => {
 
   //pintar
   return (
-    <div className="container">
+    <body className="container">
       <Header />
       <main>
         <Switch>
@@ -72,7 +72,11 @@ const App = () => {
           <Route path="/character/:id" render={renderCharacterDetail} />
         </Switch>
       </main>
-    </div>
+      <footer className="containerFooter">
+        <small>By Laura Portillo Rodríguez</small>
+        <small>©2021</small>
+      </footer>
+    </body>
   );
 };
 

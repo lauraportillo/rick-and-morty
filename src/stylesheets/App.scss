@@ -1,28 +1,17 @@
 .container {
-}
-
-.containerRender {
-}
-.containerRender__list {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-}
-.containerRender__list--card {
-  background-color: rgba(35, 169, 246, 0.4);
-}
-
-.card {
-  width: 60vw;
-  margin: 20px 20px 20px 20px;
-}
-
-.card__image {
-  width: 100%;
+  background-color: black;
 }
 
 .icons {
   font-size: 40px;
+}
+
+.containerFooter {
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
