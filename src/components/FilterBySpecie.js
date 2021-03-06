@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/FilterBySpecie.scss';
 
 const FilterBySpecie = (props) => {
   const handleChange = (ev) => {

@@ -1,53 +1,26 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-  color: inherit;
-}
-
 .container {
 }
 
-.containerHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(128, 179, 51, 0.4);
+.containerRender {
 }
-.containerFilter {
-  background-color: rgba(128, 179, 51, 0.4);
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &__name {
-    font-size: 20px;
-  }
-  &__specie {
-    font-size: 20px;
-    color: gray;
-  }
+.containerRender__list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+.containerRender__list--card {
+  background-color: rgba(35, 169, 246, 0.4);
 }
 
-.containerRender {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-  background-color: rgb(189, 187, 187);
-  &__list {
-    // height: 100vh;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-column-gap: 50px;
-    // grid-row-gap: 100px;
-    &--card {
-      background-color: rgba(35, 169, 246, 0.4);
-      padding-bottom: 30px;
-    }
-  }
+.card {
+  width: 60vw;
+  margin: 20px 20px 20px 20px;
+}
+
+.card__image {
+  width: 100%;
 }
 
 .icons {

@@ -7,13 +7,13 @@ import CharacterDetail from './CharacterDetail';
 import CharacterNotFound from './CharacterNotFound';
 import getDataFromApi from '../services/getDataFromApi';
 import '../stylesheets/App.scss';
+import '../stylesheets/Reset.scss';
 
 const App = () => {
   //estados
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('all');
-  const [gender, setGender] = useState([]);
 
   //vida del componente y promesa
   useEffect(() => {
