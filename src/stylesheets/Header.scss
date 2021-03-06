@@ -11,3 +11,10 @@
   height: 200px;
   width: 100%;
 }
+
+@media all and (min-width: 768px) {
+  .containerHeader__image {
+    height: 450px;
+    width: 100%;
+  }
+}

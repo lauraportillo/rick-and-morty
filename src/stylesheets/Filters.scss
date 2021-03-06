@@ -6,3 +6,9 @@
   height: 120px;
   background-color: black;
 }
+
+@media all and (min-width: 768px) {
+  .containerFilter {
+    height: 150px;
+  }
+}

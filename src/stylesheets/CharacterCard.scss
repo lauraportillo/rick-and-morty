@@ -14,3 +14,9 @@
   border: 10px #d4dc4b solid;
   opacity: 0.5;
 }
+
+@media all and (min-width: 768px) {
+  .card {
+    margin: 15px;
+  }
+}

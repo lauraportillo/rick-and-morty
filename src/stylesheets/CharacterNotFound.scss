@@ -20,3 +20,11 @@
   height: 50vh;
   width: 100vw;
 }
+@media all and (min-width: 768px) {
+  .containerNotFound__title {
+    font-size: 40px;
+  }
+  .containerNotFound__image {
+    height: 60vh;
+  }
+}

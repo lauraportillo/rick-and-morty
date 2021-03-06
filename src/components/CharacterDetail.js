@@ -41,9 +41,3 @@ const CharacterDetail = (props) => {
   );
 };
 export default CharacterDetail;
-
-// dead <i class="fas fa-skull-crossbones"></i>  <i class="fas fa-heart-broken"></i> <i class="fas fa-cross"></i>
-// humano <i class="fab fa-creative-commons-by"></i>   <i className="fas fa-user"></i>
-// vivo <i class="fas fa-heart"></i>  <i class="fas fa-heartbeat"></i>
-//alien <i class="fas fa-ghost"></i> <i className="fab fa-reddit-alien"></i>
-// <i className="fas fa-male"></i>
