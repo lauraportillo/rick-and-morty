@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../stylesheets/CharacterDetail.scss';
 
 const CharacterDetail = (props) => {
   let specieIcon;
@@ -19,16 +20,21 @@ const CharacterDetail = (props) => {
   }
 
   return (
-    <article>
-      <img src={props.character.image} alt="character photo" />
-      <h3>{props.character.name}</h3>
-      <h4>Status: {props.character.status}</h4>
-      <h4>Species: {props.character.specie}</h4>
-      <h4>Origin: {props.character.origin}</h4>
-      <h4>Episodes: {props.character.episode.length}</h4>
-      <span className="icons">{specieIcon}</span>
-      <span className="icons">{statusIcon}</span>
-      <Link to="/">
+    <article className="containerDetail">
+      <img className="containerDetail__image" src={props.character.image} alt="character photo" />
+      <div className="containerDetail__description">
+        <h3>{props.character.name}</h3>
+        <h4>Status: {props.character.status}</h4>
+        <h4>Species: {props.character.specie}</h4>
+        <h4>Origin: {props.character.origin}</h4>
+        <h4>Episodes: {props.character.episode.length}</h4>
+        <div className="containerDetail__icons">
+          <span className="containerDetail__icons--icon1">{specieIcon}</span>
+          <span className="containerDetail__icons--icon2">{statusIcon}</span>
+        </div>
+      </div>
+
+      <Link className="containerDetail__btn" to="/">
         <h3> {'<'} Back </h3>
       </Link>
     </article>
