@@ -32,11 +32,11 @@ const CharacterDetail = (props) => {
           <span className="containerDetail__icons--icon1">{specieIcon}</span>
           <span className="containerDetail__icons--icon2">{statusIcon}</span>
         </div>
-      </div>
 
-      <Link className="containerDetail__btn" to="/">
-        <h3> {'<'} Back </h3>
-      </Link>
+        <Link className="containerDetail__btn" to="/">
+          <h3> {'<'} go back </h3>
+        </Link>
+      </div>
     </article>
   );
 };
