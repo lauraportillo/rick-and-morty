@@ -5,6 +5,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import CharacterNotFound from './CharacterNotFound';
+import Footer from './Footer';
 import getDataFromApi from '../services/getDataFromApi';
 import '../stylesheets/App.scss';
 import '../stylesheets/Reset.scss';
@@ -60,7 +61,7 @@ const App = () => {
 
   //pintar
   return (
-    <body className="container">
+    <div className="container">
       <Header />
       <main>
         <Switch>
@@ -72,11 +73,8 @@ const App = () => {
           <Route path="/character/:id" render={renderCharacterDetail} />
         </Switch>
       </main>
-      <footer className="containerFooter">
-        <small>By Laura Portillo Rodríguez</small>
-        <small>©2021</small>
-      </footer>
-    </body>
+      <Footer />
+    </div>
   );
 };
 

@@ -1,16 +1,16 @@
 .card {
   text-align: center;
-  //   color: #faa344;
-  //   color: white;
-  //   color: #eed777;
-  //   color: #16acc9;
-  color: #d4db4b;
+  color: rgb(231, 231, 231);
   margin: 10px;
 }
 
 .card__image {
   width: 100%;
   border-radius: 50%;
-  border: 5px #faa344 solid;
   border: 5px #16acc9 solid;
+}
+
+.card__image:hover {
+  border: 10px #d4dc4b solid;
+  opacity: 0.5;
 }
