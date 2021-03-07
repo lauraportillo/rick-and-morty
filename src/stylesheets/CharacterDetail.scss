@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+.containerDetail__description--name {
+  color: #16acc9;
+  font-size: 25px;
+}
+
 .containerDetail__icons {
   margin-top: 20px;
 }
@@ -74,5 +79,8 @@
   .containerDetail {
     margin-left: 400px;
     margin-right: 380px;
+  }
+  .containerDetail__description--name {
+    font-size: 30px;
   }
 }

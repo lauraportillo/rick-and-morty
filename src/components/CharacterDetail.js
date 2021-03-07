@@ -23,7 +23,7 @@ const CharacterDetail = (props) => {
     <article className="containerDetail">
       <img className="containerDetail__image" src={props.character.image} alt="character photo" />
       <div className="containerDetail__description">
-        <h3>{props.character.name}</h3>
+        <h3 className="containerDetail__description--name">{props.character.name}</h3>
         <h4>Status: {props.character.status}</h4>
         <h4>Species: {props.character.specie}</h4>
         <h4>Origin: {props.character.origin}</h4>
