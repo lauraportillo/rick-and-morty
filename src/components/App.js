@@ -63,7 +63,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <main>
+      <main className="containerMain">
         <Switch>
           <Route path="/" exact>
             <Filters handleFilter={handleFilter} name={name} specie={specie} />

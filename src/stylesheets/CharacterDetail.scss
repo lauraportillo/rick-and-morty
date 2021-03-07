@@ -83,3 +83,12 @@
     font-size: 20px;
   }
 }
+
+@media all and (min-width: 1280px) {
+  .containerDetail {
+    flex-direction: row;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 20px;
+  }
+}
