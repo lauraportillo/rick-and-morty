@@ -3,6 +3,14 @@
   color: rgb(231, 231, 231);
   margin: 10px;
 }
+.card__title {
+  color: #16acc9;
+  font-size: 20px;
+}
+.card__subtitle {
+  font-size: 16px;
+  color: rgb(231, 231, 231);
+}
 
 .card__image {
   width: 100%;
@@ -12,7 +20,7 @@
 
 .card__image:hover {
   border: 10px #d4dc4b solid;
-  opacity: 0.5;
+  transform: scale(1.1);
 }
 
 @media all and (min-width: 768px) {
@@ -22,7 +30,10 @@
 }
 
 @media all and (min-width: 1280px) {
-  .card {
+  .card__title {
+    font-size: 24px;
+  }
+  .card__subtitle {
     font-size: 20px;
   }
 }
