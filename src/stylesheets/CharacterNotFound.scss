@@ -28,3 +28,15 @@
     height: 60vh;
   }
 }
+
+@media all and (min-width: 1280px) {
+  .containerNotFound__image {
+    background: url('../images/notfounddesktop.jpg') no-repeat center;
+    margin-left: -100px;
+  }
+  .containerNotFound__title {
+    color: #16acc9;
+    transform: none;
+    margin-bottom: -50px;
+  }
+}
