@@ -7,8 +7,21 @@
   background-color: black;
 }
 
+.containerFilter__title {
+  display: none;
+}
+
 @media all and (min-width: 768px) {
   .containerFilter {
     height: 150px;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .containerFilter__title {
+    display: flex;
+    font-size: 40px;
+    color: rgb(231, 231, 231);
+    margin-right: 30px;
   }
 }

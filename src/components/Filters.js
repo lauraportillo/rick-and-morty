@@ -8,6 +8,7 @@ const Filters = (props) => {
   };
   return (
     <form onSubmit={handleForm} className="containerFilter">
+      <h3 className="containerFilter__title">Look for your favorite RickMortCharacter!</h3>
       <FilterByName handleFilter={props.handleFilter} name={props.name} />
       <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
     </form>

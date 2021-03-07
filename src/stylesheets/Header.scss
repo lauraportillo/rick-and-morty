@@ -14,7 +14,17 @@
 
 @media all and (min-width: 768px) {
   .containerHeader__image {
-    height: 450px;
+    height: 400px;
     width: 100%;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .containerHeader__image {
+    background: url('../images/rickandmortybanner1280v2.jpg') no-repeat;
+    height: 50vh;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
   }
 }
