@@ -15,6 +15,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('all');
+  const [locations, setLocations] = useState([]);
 
   //vida del componente y promesa
   useEffect(() => {
@@ -29,6 +30,18 @@ const App = () => {
     } else if (inputChange.key === 'specie') {
       setSpecie(inputChange.value);
       console.log(specie);
+    } else if (inputChange.key === 'location') {
+      const indexLocation = locations.indexOf(inputChange.value);
+      if (indexLocation === -1) {
+        const newLocations = [...locations, inputChange.value];
+        setLocations(newLocations);
+      } else {
+        const newLocations = locations.filter((location) => {
+          return location !== inputChange.value;
+        });
+        setLocations(newLocations);
+      }
+      console.log(indexLocation);
     }
   };
 
@@ -44,8 +57,20 @@ const App = () => {
         return character.specie === specie;
       }
     })
+    .filter((character) => {
+      if (locations.length === 0) {
+        return true;
+      } else {
+        return locations.includes(character.location);
+      }
+    })
+
     // ordenado alfabéticamente de la a a la z
     .sort((a, z) => a.name.localeCompare(z.name));
+
+  const getLocations = () => {
+    return characters.map((character) => character.location);
+  };
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
@@ -66,7 +91,7 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} name={name} specie={specie} />
+            <Filters handleFilter={handleFilter} name={name} specie={specie} locations={getLocations()} />
             <CharacterList characters={filterCharacters} />
           </Route>
 
