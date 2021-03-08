@@ -10,7 +10,7 @@ const FilterByLocations = (props) => {
   };
   const locationsList = props.locations.map((location, index) => {
     return (
-      <label key={index} className="prueba">
+      <label key={index} className="locationList">
         <input type="checkbox" name="location" value={location} onChange={handleChange} />
         {location}
       </label>
@@ -19,7 +19,7 @@ const FilterByLocations = (props) => {
 
   return (
     <>
-      <label className="prueba" htmlFor="location">
+      <label className="location" htmlFor="location">
         Location:
       </label>
       {locationsList}

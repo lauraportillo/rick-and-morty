@@ -41,7 +41,6 @@ const App = () => {
         });
         setLocations(newLocations);
       }
-      console.log(indexLocation);
     }
   };
 
@@ -71,6 +70,7 @@ const App = () => {
   const getLocations = () => {
     return characters.map((character) => character.location);
   };
+  console.log(getLocations());
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
