@@ -19,7 +19,7 @@ const FilterBySpecie = (props) => {
         //estado sincronizado con el input
         value={props.specie}
       >
-        <option value="all">All species</option>
+        <option value="allSpecies">All species</option>
         <option value="Human">Human</option>
         <option value="Alien">Alien</option>
       </select>

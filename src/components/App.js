@@ -14,8 +14,8 @@ const App = () => {
   //estados
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
-  const [specie, setSpecie] = useState('all');
-  const [gender, setGender] = useState('all');
+  const [specie, setSpecie] = useState('allSpecies');
+  const [gender, setGender] = useState('allGenders');
 
   //vida del componente y promesa
   useEffect(() => {
@@ -29,7 +29,6 @@ const App = () => {
       setName(inputChange.value);
     } else if (inputChange.key === 'specie') {
       setSpecie(inputChange.value);
-      console.log(specie);
     } else if (inputChange.key === 'gender') {
       setGender(inputChange.value);
     }
@@ -41,14 +40,14 @@ const App = () => {
       return character.name.toLowerCase().includes(name.toLowerCase());
     })
     .filter((character) => {
-      if (specie === 'all') {
+      if (specie === 'allSpecies') {
         return true;
       } else {
         return character.specie === specie;
       }
     })
     .filter((character) => {
-      if (gender === 'all') {
+      if (gender === 'allGenders') {
         return true;
       } else {
         return character.gender === gender;
@@ -76,7 +75,7 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} name={name} specie={specie} specie={gender} />
+            <Filters handleFilter={handleFilter} name={name} specie={specie} gender={gender} />
             <CharacterList characters={filterCharacters} />
           </Route>
 

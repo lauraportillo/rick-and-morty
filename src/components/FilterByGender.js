@@ -19,7 +19,7 @@ const FilterByGender = (props) => {
         //estado sincronizado con el input
         value={props.gender}
       >
-        <option value="all">All genders</option>
+        <option value="allGenders">All genders</option>
         <option value="Female">Female</option>
         <option value="Male">Male</option>
         <option value="unknown">Unknown</option>

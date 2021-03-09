@@ -12,7 +12,7 @@ const Filters = (props) => {
       <h3 className="containerFilter__title">Look for your favorite RickMortCharacter!</h3>
       <FilterByName handleFilter={props.handleFilter} name={props.name} />
       <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
-      <FilterByGender handleFilter={props.handleFilter} specie={props.gender} />
+      <FilterByGender handleFilter={props.handleFilter} gender={props.gender} />
     </form>
   );
 };
