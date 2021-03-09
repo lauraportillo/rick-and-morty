@@ -34,7 +34,7 @@ const App = () => {
   const handleReset = () => {
     setCharacters([]);
     setName('');
-    setSpecie('');
+    setSpecie('all');
   };
 
   //filtrar

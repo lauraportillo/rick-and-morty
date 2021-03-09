@@ -8,7 +8,16 @@
   border: none;
   outline: none;
   text-transform: uppercase;
+  padding-right: 10px;
+  margin-left: 5px;
 }
+
+.resetIcon {
+  font-size: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 @media all and (min-width: 768px) {
   .reset {
     font-size: 24px;

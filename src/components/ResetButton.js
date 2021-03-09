@@ -9,7 +9,7 @@ const ResetButton = (props) => {
   return (
     <>
       <button className="reset" onClick={handleReset}>
-        <i className="far fa-trash-alt "></i>
+        <i className="far fa-trash-alt resetIcon"></i>
         Reset
       </button>
     </>
