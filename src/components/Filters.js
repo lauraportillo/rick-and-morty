@@ -1,5 +1,6 @@
 import FilterByName from './FilterByName';
 import FilterBySpecie from './FilterBySpecie';
+import FilterByGender from './FilterByGender';
 import '../stylesheets/Filters.scss';
 
 const Filters = (props) => {
@@ -11,6 +12,7 @@ const Filters = (props) => {
       <h3 className="containerFilter__title">Look for your favorite RickMortCharacter!</h3>
       <FilterByName handleFilter={props.handleFilter} name={props.name} />
       <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
+      <FilterByGender handleFilter={props.handleFilter} specie={props.gender} />
     </form>
   );
 };

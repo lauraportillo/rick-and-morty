@@ -15,6 +15,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('all');
+  const [gender, setGender] = useState('all');
 
   //vida del componente y promesa
   useEffect(() => {
@@ -29,6 +30,8 @@ const App = () => {
     } else if (inputChange.key === 'specie') {
       setSpecie(inputChange.value);
       console.log(specie);
+    } else if (inputChange.key === 'gender') {
+      setGender(inputChange.value);
     }
   };
 
@@ -42,6 +45,13 @@ const App = () => {
         return true;
       } else {
         return character.specie === specie;
+      }
+    })
+    .filter((character) => {
+      if (gender === 'all') {
+        return true;
+      } else {
+        return character.gender === gender;
       }
     })
     // ordenado alfabéticamente de la a a la z
@@ -66,7 +76,7 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} name={name} specie={specie} />
+            <Filters handleFilter={handleFilter} name={name} specie={specie} specie={gender} />
             <CharacterList characters={filterCharacters} />
           </Route>
 
