@@ -28,8 +28,13 @@ const App = () => {
       setName(inputChange.value);
     } else if (inputChange.key === 'specie') {
       setSpecie(inputChange.value);
-      console.log(specie);
     }
+  };
+
+  const handleReset = () => {
+    setCharacters([]);
+    setName('');
+    setSpecie('');
   };
 
   //filtrar
@@ -66,7 +71,7 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} name={name} specie={specie} />
+            <Filters handleFilter={handleFilter} handleReset={handleReset} name={name} specie={specie} />
             <CharacterList characters={filterCharacters} />
           </Route>
 
