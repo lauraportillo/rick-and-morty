@@ -84,6 +84,39 @@ const App = () => {
     }
   };
 
+  // 1º
+
+  const uniqueLocations = [];
+
+  for (const character of characters) {
+    if (!uniqueLocations.includes(character.location)) {
+      uniqueLocations.push(character.location);
+    }
+  }
+
+  console.log(uniqueLocations);
+
+  // 2º
+  const uniqueLocationsObject = {};
+
+  for (const character of characters) {
+    uniqueLocationsObject[character.location] = true;
+  }
+
+  console.log(uniqueLocationsObject);
+  console.log(Object.keys(uniqueLocationsObject));
+
+  // 3º
+
+  const uniqueLocationsSet = new Set();
+
+  for (const character of characters) {
+    uniqueLocationsSet.add(character.location);
+  }
+
+  console.log(uniqueLocationsSet);
+  console.log(Array.from(uniqueLocationsSet));
+
   //pintar
   return (
     <div className="container">
@@ -104,3 +137,15 @@ const App = () => {
 };
 
 export default App;
+
+const numbers = [1, 2, 1, 3];
+
+// 1º
+
+const newNumbers = [];
+
+for (const number of numbers) {
+  if (!newNumbers.includes(number)) {
+    newNumbers.push(number);
+  }
+}
