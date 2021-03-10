@@ -15,12 +15,13 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('all');
+  const [page, setPage] = useState(1);
 
   //vida del componente y promesa
   useEffect(() => {
     console.log(getDataFromApi());
-    getDataFromApi().then((data) => setCharacters(data));
-  }, []);
+    getDataFromApi(page).then((data) => setCharacters(data));
+  }, [page]);
 
   //definición de la función que maneja los cambios en los inputs e indentifica en qué input se está realizando el cambio.
   const handleFilter = (inputChange) => {
@@ -32,7 +33,7 @@ const App = () => {
   };
 
   const handleReset = () => {
-    setCharacters([]);
+    //setCharacters([]);
     setName('');
     setSpecie('all');
   };
