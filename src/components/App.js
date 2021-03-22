@@ -43,8 +43,8 @@ const App = () => {
   const handleReset = () => {
     //setCharacters([]);
     setName('');
-    setSpecie('all');
-    setGender('all');
+    setSpecie('allSpecies');
+    setGender('allGenders');
   };
 
   //filtrar
