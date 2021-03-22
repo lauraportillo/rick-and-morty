@@ -90,11 +90,6 @@ const App = () => {
     // ordenado alfabéticamente de la a a la z
     .sort((a, z) => a.name.localeCompare(z.name));
 
-  const getLocations = () => {
-    return characters.map((character) => character.location);
-  };
-  console.log(getLocations());
-
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
     const id = parseInt(props.match.params.id);
