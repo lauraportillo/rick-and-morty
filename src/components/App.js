@@ -96,26 +96,26 @@ const App = () => {
 
   console.log(uniqueLocations);
 
-  // 2º
-  const uniqueLocationsObject = {};
+  // // 2º
+  // const uniqueLocationsObject = {};
 
-  for (const character of characters) {
-    uniqueLocationsObject[character.location] = true;
-  }
+  // for (const character of characters) {
+  //   uniqueLocationsObject[character.location] = true;
+  // }
 
-  console.log(uniqueLocationsObject);
-  console.log(Object.keys(uniqueLocationsObject));
+  // console.log(uniqueLocationsObject);
+  // console.log(Object.keys(uniqueLocationsObject));
 
-  // 3º
+  // // 3º
 
-  const uniqueLocationsSet = new Set();
+  // const uniqueLocationsSet = new Set();
 
-  for (const character of characters) {
-    uniqueLocationsSet.add(character.location);
-  }
+  // for (const character of characters) {
+  //   uniqueLocationsSet.add(character.location);
+  // }
 
-  console.log(uniqueLocationsSet);
-  console.log(Array.from(uniqueLocationsSet));
+  // console.log(uniqueLocationsSet);
+  // console.log(Array.from(uniqueLocationsSet));
 
   //pintar
   return (
@@ -124,7 +124,7 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} name={name} specie={specie} locations={getLocations()} />
+            <Filters handleFilter={handleFilter} name={name} specie={specie} locations={uniqueLocations} />
             <CharacterList characters={filterCharacters} />
           </Route>
 
@@ -138,14 +138,14 @@ const App = () => {
 
 export default App;
 
-const numbers = [1, 2, 1, 3];
+// const numbers = [1, 2, 1, 3];
 
-// 1º
+// // 1º
 
-const newNumbers = [];
+// const newNumbers = [];
 
-for (const number of numbers) {
-  if (!newNumbers.includes(number)) {
-    newNumbers.push(number);
-  }
-}
+// for (const number of numbers) {
+//   if (!newNumbers.includes(number)) {
+//     newNumbers.push(number);
+//   }
+// }
