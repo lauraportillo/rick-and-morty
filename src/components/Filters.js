@@ -1,6 +1,7 @@
 import FilterByName from './FilterByName';
 import FilterBySpecie from './FilterBySpecie';
 import FilterByGender from './FilterByGender';
+import ResetButton from './ResetButton';
 import '../stylesheets/Filters.scss';
 
 const Filters = (props) => {
@@ -13,6 +14,7 @@ const Filters = (props) => {
       <FilterByName handleFilter={props.handleFilter} name={props.name} />
       <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
       <FilterByGender handleFilter={props.handleFilter} gender={props.gender} />
+      <ResetButton handleReset={props.handleReset} />
     </form>
   );
 };

@@ -16,12 +16,18 @@ const App = () => {
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
+  // const [page, setPage] = useState(1);
 
   //vida del componente y promesa
-  useEffect(() => {
-    console.log(getDataFromApi());
-    getDataFromApi().then((data) => setCharacters(data));
-  }, []);
+  useEffect(
+    () => {
+      console.log(getDataFromApi());
+      getDataFromApi(/*page*/).then((data) => setCharacters(data));
+    },
+    [
+      /*page*/
+    ]
+  );
 
   //definición de la función que maneja los cambios en los inputs e indentifica en qué input se está realizando el cambio.
   const handleFilter = (inputChange) => {
@@ -32,6 +38,13 @@ const App = () => {
     } else if (inputChange.key === 'gender') {
       setGender(inputChange.value);
     }
+  };
+
+  const handleReset = () => {
+    //setCharacters([]);
+    setName('');
+    setSpecie('all');
+    setGender('all');
   };
 
   //filtrar
@@ -53,6 +66,7 @@ const App = () => {
         return character.gender === gender;
       }
     })
+
     // ordenado alfabéticamente de la a a la z
     .sort((a, z) => a.name.localeCompare(z.name));
 
@@ -75,7 +89,13 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} name={name} specie={specie} gender={gender} />
+            <Filters
+              handleFilter={handleFilter}
+              handleReset={handleReset}
+              name={name}
+              specie={specie}
+              gender={gender}
+            />
             <CharacterList characters={filterCharacters} />
           </Route>
 
