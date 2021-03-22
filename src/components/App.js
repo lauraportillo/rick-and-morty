@@ -16,6 +16,7 @@ const App = () => {
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
+  const [locations, setLocations] = useState([]);
   // const [page, setPage] = useState(1);
 
   //vida del componente y promesa
@@ -37,6 +38,17 @@ const App = () => {
       setSpecie(inputChange.value);
     } else if (inputChange.key === 'gender') {
       setGender(inputChange.value);
+    } else if (inputChange.key === 'location') {
+      const indexLocation = locations.indexOf(inputChange.value);
+      if (indexLocation === -1) {
+        const newLocations = [...locations, inputChange.value];
+        setLocations(newLocations);
+      } else {
+        const newLocations = locations.filter((location) => {
+          return location !== inputChange.value;
+        });
+        setLocations(newLocations);
+      }
     }
   };
 
@@ -45,6 +57,7 @@ const App = () => {
     setName('');
     setSpecie('allSpecies');
     setGender('allGenders');
+    setLocations([]);
   };
 
   //filtrar
@@ -66,9 +79,21 @@ const App = () => {
         return character.gender === gender;
       }
     })
+    .filter((character) => {
+      if (locations.length === 0) {
+        return true;
+      } else {
+        return locations.includes(character.location);
+      }
+    })
 
     // ordenado alfabéticamente de la a a la z
     .sort((a, z) => a.name.localeCompare(z.name));
+
+  const getLocations = () => {
+    return characters.map((character) => character.location);
+  };
+  console.log(getLocations());
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
@@ -81,6 +106,14 @@ const App = () => {
       return <CharacterNotFound />;
     }
   };
+
+  const uniqueLocations = [];
+
+  for (const character of characters) {
+    if (!uniqueLocations.includes(character.location)) {
+      uniqueLocations.push(character.location);
+    }
+  }
 
   //pintar
   return (
@@ -95,6 +128,7 @@ const App = () => {
               name={name}
               specie={specie}
               gender={gender}
+              locations={uniqueLocations}
             />
             <CharacterList characters={filterCharacters} />
           </Route>
