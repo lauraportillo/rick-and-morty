@@ -18,12 +18,12 @@ const FilterByLocations = (props) => {
   });
 
   return (
-    <>
+    <div className="containerList">
       <label className="location" htmlFor="location">
         Location:
       </label>
       {locationsList}
-    </>
+    </div>
   );
 };
 export default FilterByLocations;
