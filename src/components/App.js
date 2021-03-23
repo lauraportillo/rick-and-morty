@@ -17,18 +17,13 @@ const App = () => {
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
   const [locations, setLocations] = useState([]);
-  // const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1);
 
   //vida del componente y promesa
-  useEffect(
-    () => {
-      console.log(getDataFromApi());
-      getDataFromApi(/*page*/).then((data) => setCharacters(data));
-    },
-    [
-      /*page*/
-    ]
-  );
+  useEffect(() => {
+    console.log(getDataFromApi());
+    getDataFromApi(page).then((data) => setCharacters(data));
+  }, [page]);
 
   //definición de la función que maneja los cambios en los inputs e indentifica en qué input se está realizando el cambio.
   const handleFilter = (inputChange) => {

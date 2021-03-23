@@ -5,6 +5,10 @@
   font-weight: bolder;
 }
 .locationList {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   color: #16acc9;
   font-size: 10px;
 }
