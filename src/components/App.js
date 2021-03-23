@@ -16,6 +16,7 @@ const App = () => {
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
+  const [origin, setOrigin] = useState([]);
   const [locations, setLocations] = useState([]);
   // const [page, setPage] = useState(1);
 
@@ -49,15 +50,26 @@ const App = () => {
         });
         setLocations(newLocations);
       }
+    } else if (inputChange.key === 'origin') {
+      const indexOrigin = origin.indexOf(inputChange.value);
+      if (indexOrigin === -1) {
+        const newOrigin = [...origin, inputChange.value];
+        setOrigin(newOrigin);
+      } else {
+        const newOrigin = origin.filter((origin) => {
+          return origin !== inputChange.value;
+        });
+        setOrigin(newOrigin);
+      }
     }
   };
 
   const handleReset = () => {
-    //setCharacters([]);
     setName('');
     setSpecie('allSpecies');
     setGender('allGenders');
     setLocations([]);
+    setOrigin([]);
   };
 
   //filtrar
@@ -84,6 +96,13 @@ const App = () => {
         return true;
       } else {
         return locations.includes(character.location);
+      }
+    })
+    .filter((character) => {
+      if (origin.length === 0) {
+        return true;
+      } else {
+        return origin.includes(character.origin);
       }
     })
 
@@ -123,6 +142,7 @@ const App = () => {
               name={name}
               specie={specie}
               gender={gender}
+              origin={origin}
               locations={uniqueLocations}
             />
             <CharacterList characters={filterCharacters} />
