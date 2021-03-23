@@ -8,7 +8,7 @@ const FilterByOrigin = (props) => {
       value: ev.target.value,
     });
   };
-  const originList = props.origin.map((origin, index) => {
+  const originsList = props.origins.map((origin, index) => {
     return (
       <label key={index} className="originList">
         <input type="checkbox" name="origin" value={origin} onChange={handleChange} />
@@ -22,7 +22,7 @@ const FilterByOrigin = (props) => {
       <label className="origin" htmlFor="origin">
         Origin:
       </label>
-      {originList}
+      {originsList}
     </>
   );
 };

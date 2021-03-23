@@ -16,7 +16,7 @@ const Filters = (props) => {
       <FilterByName handleFilter={props.handleFilter} name={props.name} />
       <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
       <FilterByGender handleFilter={props.handleFilter} gender={props.gender} />
-      <FilterByOrigin handleFilter={props.handleFilter} origin={props.origin} />
+      <FilterByOrigin handleFilter={props.handleFilter} origins={props.origins} />
       <FilterByLocations handleFilter={props.handleFilter} locations={props.locations} />
       <ResetButton handleReset={props.handleReset} />
     </form>

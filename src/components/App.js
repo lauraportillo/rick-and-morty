@@ -16,7 +16,7 @@ const App = () => {
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
-  const [origin, setOrigin] = useState([]);
+  const [origins, setOrigins] = useState([]);
   const [locations, setLocations] = useState([]);
   // const [page, setPage] = useState(1);
 
@@ -51,15 +51,15 @@ const App = () => {
         setLocations(newLocations);
       }
     } else if (inputChange.key === 'origin') {
-      const indexOrigin = origin.indexOf(inputChange.value);
+      const indexOrigin = origins.indexOf(inputChange.value);
       if (indexOrigin === -1) {
-        const newOrigin = [...origin, inputChange.value];
-        setOrigin(newOrigin);
+        const newOrigins = [...origins, inputChange.value];
+        setOrigins(newOrigins);
       } else {
-        const newOrigin = origin.filter((origin) => {
+        const newOrigins = origins.filter((origin) => {
           return origin !== inputChange.value;
         });
-        setOrigin(newOrigin);
+        setOrigins(newOrigins);
       }
     }
   };
@@ -69,7 +69,7 @@ const App = () => {
     setSpecie('allSpecies');
     setGender('allGenders');
     setLocations([]);
-    setOrigin([]);
+    setOrigins([]);
   };
 
   //filtrar
@@ -99,10 +99,10 @@ const App = () => {
       }
     })
     .filter((character) => {
-      if (origin.length === 0) {
+      if (origins.length === 0) {
         return true;
       } else {
-        return origin.includes(character.origin);
+        return origins.includes(character.origin);
       }
     })
 
@@ -142,7 +142,7 @@ const App = () => {
               name={name}
               specie={specie}
               gender={gender}
-              origin={origin}
+              origins={origins}
               locations={uniqueLocations}
             />
             <CharacterList characters={filterCharacters} />
