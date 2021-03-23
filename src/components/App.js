@@ -109,6 +109,22 @@ const App = () => {
     // ordenado alfabéticamente de la a a la z
     .sort((a, z) => a.name.localeCompare(z.name));
 
+  // extraer origins no repetidos a un nuevo array
+  const uniqueOrigins = [];
+  for (const character of characters) {
+    if (!uniqueOrigins.includes(character.origin)) {
+      uniqueOrigins.push(character.origin);
+    }
+  }
+
+  // extraer locations no repetidas a un nuevo array
+  const uniqueLocations = [];
+  for (const character of characters) {
+    if (!uniqueLocations.includes(character.location)) {
+      uniqueLocations.push(character.location);
+    }
+  }
+
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
     const id = parseInt(props.match.params.id);
@@ -120,14 +136,6 @@ const App = () => {
       return <CharacterNotFound />;
     }
   };
-
-  const uniqueLocations = [];
-
-  for (const character of characters) {
-    if (!uniqueLocations.includes(character.location)) {
-      uniqueLocations.push(character.location);
-    }
-  }
 
   //pintar
   return (
@@ -142,7 +150,7 @@ const App = () => {
               name={name}
               specie={specie}
               gender={gender}
-              origins={origins}
+              origins={uniqueOrigins}
               locations={uniqueLocations}
             />
             <CharacterList characters={filterCharacters} />

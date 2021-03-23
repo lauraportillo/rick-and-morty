@@ -18,12 +18,12 @@ const FilterByOrigin = (props) => {
   });
 
   return (
-    <>
+    <div className="containerList">
       <label className="origin" htmlFor="origin">
         Origin:
       </label>
       {originsList}
-    </>
+    </div>
   );
 };
 export default FilterByOrigin;

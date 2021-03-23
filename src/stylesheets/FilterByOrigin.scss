@@ -8,3 +8,9 @@
   color: #16acc9;
   font-size: 10px;
 }
+
+.containerList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
