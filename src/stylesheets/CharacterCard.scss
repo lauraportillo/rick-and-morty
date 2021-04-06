@@ -11,16 +11,16 @@
   font-size: 16px;
   color: rgb(231, 231, 231);
 }
-
 .card__image {
   width: 100%;
   border-radius: 50%;
   border: 5px #16acc9 solid;
-}
-
-.card__image:hover {
-  border: 10px #d4dc4b solid;
-  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border: 10px #d4dc4b solid;
+  }
 }
 
 @media all and (min-width: 768px) {

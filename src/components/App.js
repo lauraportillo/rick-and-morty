@@ -16,6 +16,7 @@ const App = () => {
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
+  const [origins, setOrigins] = useState([]);
   const [locations, setLocations] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -44,15 +45,26 @@ const App = () => {
         });
         setLocations(newLocations);
       }
+    } else if (inputChange.key === 'origin') {
+      const indexOrigin = origins.indexOf(inputChange.value);
+      if (indexOrigin === -1) {
+        const newOrigins = [...origins, inputChange.value];
+        setOrigins(newOrigins);
+      } else {
+        const newOrigins = origins.filter((origin) => {
+          return origin !== inputChange.value;
+        });
+        setOrigins(newOrigins);
+      }
     }
   };
 
   const handleReset = () => {
-    //setCharacters([]);
     setName('');
     setSpecie('allSpecies');
     setGender('allGenders');
     setLocations([]);
+    setOrigins([]);
   };
 
   //filtrar
@@ -81,14 +93,32 @@ const App = () => {
         return locations.includes(character.location);
       }
     })
+    .filter((character) => {
+      if (origins.length === 0) {
+        return true;
+      } else {
+        return origins.includes(character.origin);
+      }
+    })
 
     // ordenado alfabéticamente de la a a la z
     .sort((a, z) => a.name.localeCompare(z.name));
 
-  const getLocations = () => {
-    return characters.map((character) => character.location);
-  };
-  console.log(getLocations());
+  // extraer origins no repetidos a un nuevo array
+  const uniqueOrigins = [];
+  for (const character of characters) {
+    if (!uniqueOrigins.includes(character.origin)) {
+      uniqueOrigins.push(character.origin);
+    }
+  }
+
+  // extraer locations no repetidas a un nuevo array
+  const uniqueLocations = [];
+  for (const character of characters) {
+    if (!uniqueLocations.includes(character.location)) {
+      uniqueLocations.push(character.location);
+    }
+  }
 
   // cada usuario tiene que tener su enlace
   const renderCharacterDetail = (props) => {
@@ -101,14 +131,6 @@ const App = () => {
       return <CharacterNotFound />;
     }
   };
-
-  const uniqueLocations = [];
-
-  for (const character of characters) {
-    if (!uniqueLocations.includes(character.location)) {
-      uniqueLocations.push(character.location);
-    }
-  }
 
   //pintar
   return (
@@ -123,6 +145,7 @@ const App = () => {
               name={name}
               specie={specie}
               gender={gender}
+              origins={uniqueOrigins}
               locations={uniqueLocations}
             />
             <CharacterList characters={filterCharacters} />
