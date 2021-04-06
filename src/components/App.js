@@ -1,12 +1,18 @@
+// React
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+// Services
+import getDataFromApi from '../services/getDataFromApi';
+import counters from '../services/counters';
+// Components
 import Header from './Header';
 import Filters from './Filters';
+import ChangePage from './ChangePage';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import CharacterNotFound from './CharacterNotFound';
 import Footer from './Footer';
-import getDataFromApi from '../services/getDataFromApi';
+// Styles
 import '../stylesheets/App.scss';
 import '../stylesheets/Reset.scss';
 
@@ -22,7 +28,6 @@ const App = () => {
 
   //vida del componente y promesa
   useEffect(() => {
-    console.log(getDataFromApi());
     getDataFromApi(page).then((data) => setCharacters(data));
   }, [page]);
 
@@ -131,6 +136,13 @@ const App = () => {
       return <CharacterNotFound />;
     }
   };
+  // handler functions to navigate through pages
+  const handleLess = () => {
+    counters.less(page, setPage);
+  };
+  const handleMore = () => {
+    counters.more(page, setPage);
+  };
 
   //pintar
   return (
@@ -148,7 +160,9 @@ const App = () => {
               origins={uniqueOrigins}
               locations={uniqueLocations}
             />
+            <ChangePage handleLess={handleLess} handleMore={handleMore} page={page} />
             <CharacterList characters={filterCharacters} />
+            <ChangePage handleLess={handleLess} handleMore={handleMore} page={page} />
           </Route>
 
           <Route path="/character/:id" render={renderCharacterDetail} />
