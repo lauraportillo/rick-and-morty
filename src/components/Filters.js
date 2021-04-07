@@ -13,12 +13,26 @@ const Filters = (props) => {
   return (
     <form onSubmit={handleForm} className="containerFilter">
       <h3 className="containerFilter__title">Look for your favorite RickMortCharacter!</h3>
-      <FilterByName handleFilter={props.handleFilter} name={props.name} />
-      <FilterBySpecie handleFilter={props.handleFilter} specie={props.specie} />
-      <FilterByGender handleFilter={props.handleFilter} gender={props.gender} />
-      <FilterByOrigin handleFilter={props.handleFilter} origins={props.origins} />
-      <FilterByLocations handleFilter={props.handleFilter} locations={props.locations} />
-      <ResetButton handleReset={props.handleReset} />
+      <FilterByName handleFilter={props.handleFilter} name={props.name} className="containerFilter__byName" />
+      <div className="containerFilter__box">
+        <FilterBySpecie
+          handleFilter={props.handleFilter}
+          specie={props.specie}
+          className="containerFilter__box--specie"
+        />
+        <FilterByGender
+          handleFilter={props.handleFilter}
+          gender={props.gender}
+          className="containerFilter__box--gender"
+        />
+        <ResetButton handleReset={props.handleReset} className="containerFilter__box--reset" />
+        <FilterByOrigin
+          handleFilter={props.handleFilter}
+          origins={props.origins}
+          className="containerFilter__box--origins"
+        />
+        {/* <FilterByLocations handleFilter={props.handleFilter} locations={props.locations} /> */}
+      </div>
     </form>
   );
 };

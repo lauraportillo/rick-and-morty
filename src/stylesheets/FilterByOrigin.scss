@@ -1,16 +1,22 @@
-.origin {
-  margin-left: 10px;
-  color: #16acc9;
-  font-size: 20px;
-  font-weight: bolder;
-}
 .originList {
-  color: #16acc9;
-  font-size: 10px;
+  display: none;
 }
 
-.containerList {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+@media all and (min-width: 768px) {
+  .origin {
+    margin-left: 10px;
+    color: #16acc9;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  .originList {
+    color: #16acc9;
+    font-size: 10px;
+  }
+
+  .containerList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

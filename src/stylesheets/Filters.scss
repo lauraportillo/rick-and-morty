@@ -1,5 +1,6 @@
 .containerFilter {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -8,6 +9,15 @@
 }
 
 .containerFilter__title {
+  font-size: 18px;
+  color: rgb(231, 231, 231);
+}
+
+.containerFilter__name {
+}
+.containerFilter__box {
+}
+.containerFilter__box--origins {
   display: none;
 }
 
@@ -18,10 +28,10 @@
 }
 
 @media all and (min-width: 1280px) {
-  .containerFilter__title {
-    display: flex;
-    font-size: 25px;
-    color: rgb(231, 231, 231);
-    margin-right: 30px;
-  }
+  // .containerFilter__title {
+  //   display: flex;
+  //   font-size: 25px;
+  //   color: rgb(231, 231, 231);
+  //   margin-right: 30px;
+  // }
 }
