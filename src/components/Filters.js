@@ -10,9 +10,16 @@ const Filters = (props) => {
   const handleForm = (ev) => {
     ev.preventDefault();
   };
+
+  const handleBtn = () => {
+    props.handleBtn();
+  };
+
   return (
     <form onSubmit={handleForm} className="containerFilter">
-      <h3 className="containerFilter__title">Look for your favorite RickMortCharacter!</h3>
+      <button className="containerFilter__btn animate__animated  animate__pulse animate__infinite" onClick={handleBtn}>
+        Look for your favorite RickMortCharacter!
+      </button>
       <FilterByName handleFilter={props.handleFilter} name={props.name} className="containerFilter__byName" />
       <div className="containerFilter__box">
         <FilterBySpecie
