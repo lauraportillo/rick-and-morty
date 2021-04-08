@@ -1,9 +1,14 @@
-.nav {
-  display: flex;
-  justify-content: center;
-  color: white;
-}
 .arrows {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.arrows__left {
+  padding: 10px;
+}
+.arrows__right {
+  padding: 10px;
 }

@@ -8,13 +8,17 @@ const ChangePage = (props) => {
   return (
     <nav className="nav">
       <ul className="arrows">
-        <li key="left" className="arrows__containerL" onClick={handleLess}>
+        <li key="left" className="arrows__left" onClick={handleLess}>
           <i className="fas fa-angle-double-left arrows__prev"></i>
+        </li>
+        <li>
           <p className="arrows__text"> Previous</p>
         </li>
         <span className="arrows__counter">| Page {page} |</span>
-        <li key="right" className="arrows__containerR" onClick={handleMore}>
+        <li>
           <p className="arrows__text"> Next</p>
+        </li>
+        <li key="right" className="arrows__right" onClick={handleMore}>
           <i className="fas fa-angle-double-right arrows__next"></i>
         </li>
       </ul>
