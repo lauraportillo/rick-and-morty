@@ -6,6 +6,7 @@ import getDataFromApi from '../services/getDataFromApi';
 import counters from '../services/counters';
 // Components
 import Header from './Header';
+import Loading from './Loading';
 import Filters from './Filters';
 import ChangePage from './ChangePage';
 import CharacterList from './CharacterList';
@@ -19,16 +20,20 @@ import '../stylesheets/Reset.scss';
 const App = () => {
   //estados
   const [characters, setCharacters] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [name, setName] = useState('');
   const [specie, setSpecie] = useState('allSpecies');
   const [gender, setGender] = useState('allGenders');
   const [origins, setOrigins] = useState([]);
   const [locations, setLocations] = useState([]);
   const [page, setPage] = useState(1);
+  const [showFilters, setShowFilters] = useState();
 
-  //vida del componente y promesa
+  //vida del componente y promesa - Loading is false when promise completes
   useEffect(() => {
-    getDataFromApi(page).then((data) => setCharacters(data));
+    getDataFromApi(page)
+      .then((data) => setCharacters(data))
+      .then(() => setLoading(false));
   }, [page]);
 
   //definición de la función que maneja los cambios en los inputs e indentifica en qué input se está realizando el cambio.
@@ -143,6 +148,26 @@ const App = () => {
   const handleMore = () => {
     counters.more(page, setPage);
   };
+  //function to hide or Show filters section
+  const handleBtn = () => {
+    setShowFilters(!showFilters);
+  };
+
+  //render the filtersection when the state showFilters is true, and doesn't when is false
+  const renderFilters = () => {
+    return showFilters ? (
+      <Filters
+        handleFilter={handleFilter}
+        handleReset={handleReset}
+        handleBtn={handleBtn}
+        name={name}
+        specie={specie}
+        gender={gender}
+        origins={uniqueOrigins}
+        locations={uniqueLocations}
+      />
+    ) : null;
+  };
 
   //pintar
   return (
@@ -151,15 +176,9 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
-            <Filters
-              handleFilter={handleFilter}
-              handleReset={handleReset}
-              name={name}
-              specie={specie}
-              gender={gender}
-              origins={uniqueOrigins}
-              locations={uniqueLocations}
-            />
+            <Loading loading={loading} />
+            {renderFilters()}
+
             <ChangePage handleLess={handleLess} handleMore={handleMore} page={page} />
             <CharacterList characters={filterCharacters} />
             <ChangePage handleLess={handleLess} handleMore={handleMore} page={page} />
