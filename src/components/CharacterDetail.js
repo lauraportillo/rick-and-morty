@@ -12,7 +12,7 @@ const CharacterDetail = (props) => {
 
   let statusIcon;
   if (props.character.status === 'Alive') {
-    statusIcon = <i className="fas fa-heartbeat"></i>;
+    statusIcon = <i className="fas fa-heartbeat animate__animated  animate__pulse animate__infinite"></i>;
   } else if (props.character.status === 'Dead') {
     statusIcon = <i className="fas fa-cross"></i>;
   } else if (props.character.status === 'unknown') {
