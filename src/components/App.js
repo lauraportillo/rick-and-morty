@@ -176,6 +176,9 @@ const App = () => {
       <main className="containerMain">
         <Switch>
           <Route path="/" exact>
+            <button className="btn animate__animated  animate__pulse animate__infinite" onClick={handleBtn}>
+              Look for your favorite RickMortCharacter!
+            </button>
             <Loading loading={loading} />
             {renderFilters()}
 

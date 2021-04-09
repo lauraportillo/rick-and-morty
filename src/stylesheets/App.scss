@@ -1,6 +1,21 @@
 .container {
   background-color: black;
 }
+.containerMain {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: rgb(231, 231, 231);
+  margin-top: 15px;
+}
 
 @media all and (min-width: 1280px) {
 }
