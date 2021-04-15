@@ -1,0 +1,21 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingImg {
+  width: 50px;
+}
+
+@media all and (min-width: 768px) {
+  .loadingImg {
+    width: 120px;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .loadingImg {
+    width: 100px;
+  }
+}
