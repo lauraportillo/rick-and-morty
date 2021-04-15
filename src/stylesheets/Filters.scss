@@ -6,6 +6,7 @@
   width: 100%;
   height: 150px;
   background-color: black;
+  margin-top: -30px;
 }
 
 .containerFilter__name {
@@ -20,16 +21,22 @@
 }
 
 @media all and (min-width: 768px) {
+  .containerFilter__box {
+    display: flex;
+    margin-left: 126px;
+  }
   .containerFilter {
     height: 150px;
+    width: 100%;
+    margin-top: -15px;
+  }
+  .containerFilter__name {
+    width: 284px;
+  }
+  .containerFilter__box--origins {
+    display: flex;
   }
 }
 
 @media all and (min-width: 1280px) {
-  // .containerFilter__title {
-  //   display: flex;
-  //   font-size: 25px;
-  //   color: rgb(231, 231, 231);
-  //   margin-right: 30px;
-  // }
 }
