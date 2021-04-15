@@ -12,11 +12,11 @@ const CharacterDetail = (props) => {
 
   let statusIcon;
   if (props.character.status === 'Alive') {
-    statusIcon = <i className="fas fa-heartbeat animate__animated  animate__pulse animate__infinite"></i>;
+    statusIcon = <i className="fas fa-heartbeat animate__animated  animate__heartBeat animate__infinite"></i>;
   } else if (props.character.status === 'Dead') {
-    statusIcon = <i className="fas fa-cross"></i>;
+    statusIcon = <i className="fas fa-cross animate__animated  animate__flash animate__infinite"></i>;
   } else if (props.character.status === 'unknown') {
-    statusIcon = <i className="fas fa-question"></i>;
+    statusIcon = <i className="fas fa-question animate__animated  animate__rotateIn animate__infinite"></i>;
   }
 
   return (
