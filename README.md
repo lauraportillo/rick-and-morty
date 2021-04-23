@@ -6,4 +6,4 @@ Hola! Soy Laura Portillo y este es mi ejercicio para reflejar los conocimientos 
 
 Espero poder contarte más en algún momento.
 
-Readme in progress.
+`Readme in progress.`
