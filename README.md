@@ -6,4 +6,4 @@ Hola! Soy Laura Portillo y este es mi ejercicio para reflejar los conocimientos 
 
 Espero poder contarte más en algún momento.
 
-By the way: `May the force be with me`
+Readme in progress.
