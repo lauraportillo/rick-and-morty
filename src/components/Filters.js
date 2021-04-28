@@ -29,6 +29,7 @@ const Filters = (props) => {
         <FilterByOrigin
           handleFilter={props.handleFilter}
           origins={props.origins}
+          selectedOrigins={props.selectedOrigins}
           className="containerFilter__box--origins"
         />
         {/* <FilterByLocations handleFilter={props.handleFilter} locations={props.locations} /> */}

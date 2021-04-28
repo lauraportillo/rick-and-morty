@@ -164,6 +164,7 @@ const App = () => {
         specie={specie}
         gender={gender}
         origins={uniqueOrigins}
+        selectedOrigins={origins}
         locations={uniqueLocations}
       />
     ) : null;

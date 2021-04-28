@@ -1,6 +1,6 @@
 {
   "homepage": "./",
-  "name": "modulo-3-leccion-02-organizar-ficheros-y-carpetas",
+  "name": "rick-and-morty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

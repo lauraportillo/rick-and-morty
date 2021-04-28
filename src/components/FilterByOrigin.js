@@ -11,11 +11,19 @@ const FilterByOrigin = (props) => {
   const originsList = props.origins.map((origin, index) => {
     return (
       <label key={index} className="originList">
-        <input type="checkbox" name="origin" value={origin} onChange={handleChange} />
+        <input
+          type="checkbox"
+          name="origin"
+          value={origin}
+          checked={props.selectedOrigins.includes(origin)}
+          onChange={handleChange}
+        />
         {origin}
       </label>
     );
   });
+
+  originsList.splice(4);
 
   return (
     <div className="containerList">
