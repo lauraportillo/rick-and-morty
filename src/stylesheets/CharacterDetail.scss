@@ -76,6 +76,21 @@
 }
 
 @media all and (min-width: 1280px) {
+  .containerDetail {
+    margin-top: 50px;
+    flex-direction: row;
+    max-width: 800px;
+  }
+
+  .containerDetail__image {
+    padding: 20px;
+    border-radius: 40px;
+  }
+  .containerDetail__description {
+    font-size: 25px;
+    padding: 30px 100px 30px 30px;
+  }
+
   .containerDetail__description--name {
     font-size: 30px;
   }
