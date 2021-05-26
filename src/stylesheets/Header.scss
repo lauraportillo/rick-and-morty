@@ -6,25 +6,25 @@
 }
 .containerHeader__image {
   background: url('../images/rickandmortybanner1.jpg') no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
-  height: 200px;
   width: 100%;
+  height: 56.25vw;
 }
 
 @media all and (min-width: 768px) {
   .containerHeader__image {
-    height: 400px;
     width: 100%;
+    height: 56.25vw;
   }
 }
 
 @media all and (min-width: 1280px) {
   .containerHeader__image {
     background: url('../images/rickandmortybanner1280v3.jpg') no-repeat;
-    height: 40vh;
-    background-attachment: scroll;
+    background-size: contain;
     background-position: center center;
-    background-size: cover;
+    width: 100%;
+    height: 18.33vw;
   }
 }
