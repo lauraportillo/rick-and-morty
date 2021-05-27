@@ -1,9 +1,5 @@
-![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
+# Rick and Morty Project
 
-# Rick and Morty
-
-Hola! Soy Laura Portillo y este es mi ejercicio para reflejar los conocimientos adquiridos en el Módulo 3 React del bootcamp de **Adalab**.
-
-Espero poder contarte más en algún momento.
-
-`Readme in progress.`
+Learn more about your favorite **Rick and Morty** characters through this website with the entire list of their protagonists, made with the **React.js**, a JavaScript library used in web development to build interactive elements on websites.
+This is a test of the **Adalab** Front-End programming bootcamp. The animated series for adults Rick and Morty is one of teachers’ favorites, who have not hesitated to pay tribute to Rick Sánchez, a mad scientist, and his entire family.
+Click [here](https://lauraportillo.github.io/rick-and-morty/#/) if you want to see Rick and Morty Project, by [Laura Portillo](https://www.linkedin.com/in/laura-portillo-rodr%C3%ADguez/)
