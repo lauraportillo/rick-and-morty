@@ -1,8 +1,6 @@
 # Rick and Morty Project
 
-Learn more about your favorite **Rick and Morty** characters through this website with the entire list of their protagonists, made with the **React.js**, a JavaScript library used in web development to build interactive elements on websites.
-
-This is a test of the **Adalab** Front-End programming bootcamp.
+Learn more about your favorite **Rick and Morty** characters through this website with the entire list of their protagonists, made with the **React.js**.
 
 The animated series for adults Rick and Morty is one of teachers’ favorites, who have not hesitated to pay tribute to Rick Sánchez, a mad scientist, and his entire family.
 
