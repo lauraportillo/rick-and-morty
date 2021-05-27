@@ -65,32 +65,6 @@
   background-color: #d4dc4b;
 }
 
-// /* Fading animation */
-// .fade {
-//   -webkit-animation-name: fade;
-//   -webkit-animation-duration: 5s;
-//   animation-name: fade;
-//   animation-duration: 5s;
-// }
-
-// @-webkit-keyframes fade {
-//   0% {
-//     opacity: 0.1;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes fade {
-//   0% {
-//     opacity: 0.1;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
 @keyframes jumpIn {
   0% {
     transform: translateX(-2000px) skew(30deg) scale(1.3);

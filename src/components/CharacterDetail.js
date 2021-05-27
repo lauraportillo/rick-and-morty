@@ -20,7 +20,7 @@ const CharacterDetail = (props) => {
   }
 
   return (
-    <article className="containerDetail fade">
+    <article className="containerDetail">
       <img className="containerDetail__image" src={props.character.image} alt="character photo" />
       <div className="containerDetail__description">
         <h3 className="containerDetail__description--name">{props.character.name}</h3>
